@@ -14,6 +14,15 @@ const randomFunc = {
     symbol: getRandomSymbol
 }
 
+clipboardEl.addEventListener('click', () => {
+    const password = resultEl.innerText
+
+    if (!password) { return }
+
+    window.navigator.clipboard.writeText(password);
+    alert('Password copied to clipboard!')
+})
+
 generateEl.addEventListener('click', () => {
     const length = +lengthEl.value
     const hasLower = lowercaseEl.checked
